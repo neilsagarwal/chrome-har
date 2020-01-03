@@ -1,0 +1,46 @@
+<!-- Modified from https://github.com/micmro/PerfCascade -->
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" href="src/perf-cascade-gh-page.css">
+</head>
+
+<body>
+  <section class="page-header">
+  </section>
+  <section class="main-content">
+
+    <div id="legend-holder"></div>
+    <select id="page-selector"></select>
+    <div class="output"></div>
+
+  </section>
+
+  <script src="src/perf-cascade.min.js"></script>
+
+  <script>
+  var outputHolder = document.getElementsByClassName("output")[0];
+  var pageSelectorEl = document.getElementById("page-selector");
+  var legendHolderEl = document.getElementById("legend-holder");
+
+  var perfCascadeOptions = {
+    pageSelector: pageSelectorEl, //default: undefined
+    legendHolder: legendHolderEl, //default: undefined (hide-legend)
+    showUserTiming: true //default: false
+  };
+
+  var harLogData =
+  
+
+  var perfCascadeSvg = perfCascade.fromHar(harLogData, perfCascadeOptions);
+  outputHolder.appendChild(perfCascadeSvg);
+  </script>
+</body>
+
+</html>

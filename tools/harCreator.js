@@ -20,7 +20,7 @@ fs
   .readFileAsync(path.resolve(perflogPath), 'utf8')
   .then(JSON.parse)
   .then(messages => parser.harFromMessages(messages))
-  .then(har => JSON.stringify(har, null, 2))
+  .then(har => JSON.stringify(har, null, 0))
   .then(har =>
     fs.writeFileAsync(path.basename(perflogPath, '.json') + '.har', har, 'utf8')
   );
